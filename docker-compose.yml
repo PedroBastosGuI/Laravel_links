@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: db_links
+      MYSQL_USER: root
+      MYSQL_PASSWORD: senhasecreta
+      MYSQL_ROOT_PASSWORD: senhasecreta
+    ports:
+      - "3333:3306"
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
